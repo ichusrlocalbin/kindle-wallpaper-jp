@@ -2,11 +2,14 @@
 
 ## TL;DR
 
-* 古いkindle(paper white, 第5世代)を天気予報とカレンダーのイベントを表示する壁紙に
+* 古いkindle(paper white, 第5世代)を天気予報とGoogleカレンダーのイベントを表示する壁紙に  
+  ![kindle wallpaper](https://ichusrlocalbin.github.io/images/posts/kindle-wallpaper/kindle-wallpaper.jpg)
+* 充電は1ヵ月に1度くらい(にならないかなー、と願望。これから測定します)
+
 
 ## 動機
 
-* 天気予報を録画から見るの面倒。iPhoneの天気予報の精度も悪い。
+* 天気予報を録画から見るの面倒。iPhoneもwithingsの体重計も天気予報の精度が悪い。
 * kindleだとバッテリーをほぼ食わないから壁紙に最適
 * 家族も喜ぶ
 * 新しいkindleも買える!
@@ -19,10 +22,13 @@
 ## 元のkindle-wallpaperと違う所
 
 * 元のkinlde-wallpaper: [pjimenezmateo/kindle-wallpaper](https://github.com/pjimenezmateo/kindle-wallpaper) Thank you so much!
-* 日本語化: 曜日とか
+* 天気予報は、livedoorのAPIを使用。元となるデータは、日本気象協会っぽい。
+  * 元々あった画像が少なく、無理に天気を当てはめているので、一つの画像に複数の天気が割り当てられている。
+  * 詳しくは[メモ](docs/README.md)を参照
+* メッセージの日本語化: 曜日とか
 * 本日の予定と全日の予定との区別の廃止(予定を表示する幅が狭かったので)
 * 更新時刻が朝の6時だったけど、次の日の天気予報も見たいんじゃないかと思い、日本時間の15時(UTCで6時)に変更(cronの更新時刻のコードはそのまま、天気予報は次の日のものを表示するようにした)
-* google-apiを使うようになったり、yahooのapiがsqlっぽくなったりと細かな変更
+* google-apiを使うようになったりと細かな変更
 
 ## raspberry-piの設定
 

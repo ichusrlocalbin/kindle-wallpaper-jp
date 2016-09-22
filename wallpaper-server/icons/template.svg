@@ -1,9 +1,10 @@
 <svg width="600" height="800" xmlns="http://www.w3.org/2000/svg">
  <g>
-  <g id="svg_22" transform="scale(3.25) translate(5.055 20.166)">ICON_ONE</g>
+  <g id="svg_25" transform="scale(3.25) translate(5.055 20.166)">ICON_ONE</g>
   <title>Weather</title>
   <g font-family="DejaVu Sans" id="weather">
    <text font-size="35px" y="52.25606" x="150.03906" text-anchor="middle" id="svg_2">TODAY</text>
+   <text font-size="35px" y="52.25606" x="446.26932" text-anchor="middle" id="svg_26">WEATHER_TEXT</text>
    <text font-size="35px" y="121.70689" x="446.26932" text-anchor="middle" id="svg_3">最高:</text>
    <text font-size="100px" y="209.20592" x="526.72095" text-anchor="end" id="svg_6">HIGH_ONE</text>
    <text font-size="64px" y="182.48717" x="548.30981" text-anchor="middle" id="svg_7">°C</text>
@@ -24,8 +25,8 @@
   <text id="svg_19" font-weight="bold" xml:space="preserve" text-anchor="start" font-family="null" font-size="17" y="729" x="170" stroke-linecap="null" stroke-linejoin="null" stroke-dasharray="null" stroke-width="null" fill="black">Hour4</text>
   <text id="svg_20" font-weight="normal" xml:space="preserve" text-anchor="start" font-family="null" font-size="17" y="529" x="250" stroke-linecap="null" stroke-linejoin="null" stroke-dasharray="null" stroke-width="null" fill="black">Name0</text>
   <text id="svg_21" font-weight="normal" xml:space="preserve" text-anchor="start" font-family="null" font-size="17" y="579" x="250" stroke-linecap="null" stroke-linejoin="null" stroke-dasharray="null" stroke-width="null" fill="black">Name1</text>
-  <text id="svg_21" font-weight="normal" xml:space="preserve" text-anchor="start" font-family="null" font-size="17" y="629" x="250" stroke-linecap="null" stroke-linejoin="null" stroke-dasharray="null" stroke-width="null" fill="black">Name2</text>
-  <text id="svg_21" font-weight="normal" xml:space="preserve" text-anchor="start" font-family="null" font-size="17" y="679" x="250" stroke-linecap="null" stroke-linejoin="null" stroke-dasharray="null" stroke-width="null" fill="black">Name3</text>
-  <text id="svg_21" font-weight="normal" xml:space="preserve" text-anchor="start" font-family="null" font-size="17" y="729" x="250" stroke-linecap="null" stroke-linejoin="null" stroke-dasharray="null" stroke-width="null" fill="black">Name4</text>
+  <text id="svg_22" font-weight="normal" xml:space="preserve" text-anchor="start" font-family="null" font-size="17" y="629" x="250" stroke-linecap="null" stroke-linejoin="null" stroke-dasharray="null" stroke-width="null" fill="black">Name2</text>
+  <text id="svg_23" font-weight="normal" xml:space="preserve" text-anchor="start" font-family="null" font-size="17" y="679" x="250" stroke-linecap="null" stroke-linejoin="null" stroke-dasharray="null" stroke-width="null" fill="black">Name3</text>
+  <text id="svg_24" font-weight="normal" xml:space="preserve" text-anchor="start" font-family="null" font-size="17" y="729" x="250" stroke-linecap="null" stroke-linejoin="null" stroke-dasharray="null" stroke-width="null" fill="black">Name4</text>
  </g>
 </svg>
