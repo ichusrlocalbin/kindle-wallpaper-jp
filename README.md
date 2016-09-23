@@ -45,7 +45,7 @@
 
 個人の環境に合わせ、設定を修正
 
-* `kindle/launch.sh` の `WALLPAPER_SERVER`
+* `kindle/display_wallpaper.sh` の `WALLPAPER_SERVER`
 * `wallpaper-server/programs/create_events_image.py` の `CALENDAR_ID`  
    `primary` 以外を設定する場合は、同スクリプト中の `show my carender_id list` の二つを外して、どの `CALENDAR_ID` を設定すべきか検討をつける
 * `wallpaper-server/programs/create_weather_image.py` の `yql_query = 'select * from weather.forecast where woeid = 26236758 and u="c"'` の `woeid` を自分の表示したい場所に設定する。現状は、東京。woeidは、 [https://www.yahoo.com/news/weather/](https://www.yahoo.com/news/weather/) の `Change location` に郵便番号を入れて表示されるURLの末尾から取得できる。
@@ -66,8 +66,8 @@ docker run -p 8080:80 --name kw -d kindle-wallpaper
 インストール当日、実行して、次の日の状態の画像が取得できることを確認
 
 ```
-docker exec -it kp bash
-./launch.sh
+docker exec -it kw bash
+./display_wallpaper.sh
 exit
 curl http://localhost:8080/done.png > done.png
 ```
@@ -116,11 +116,14 @@ sudo systemctl enable docker-kindle-wallpaper.service
 ## kindle側の設定
 
 ```
-scp kindle/launch.sh root@192.168.15.244:/mnt/us/
+ssh root@192.168.15.244 'mkdir /mnt/us/wallpaper'
+scp kindle/display_wallpaper.sh root@192.168.15.244:/mnt/us/wallpaper/
+scp kindle/keep_ready_to_suspend.sh root@192.168.15.244:/mnt/us/wallpaper/
+scp kindle/keep_ready_to_suspend.conf root@192.168.15.244:/etc/init/
 ssh root@192.168.15.244
-chmod 755 /mnt/us/launch.sh
+chmod 755 /mnt/us/wallpaper/*.sh
 mntroot rw
-echo '5 6 * * * /mnt/us/launch.sh' >> /etc/crontab/root
+echo '5 6 * * * /mnt/us/wallpaper/display_wallpaper.sh' >> /etc/crontab/root
 ```
 
 ## 参考: kindle paper white(第5世代)のjailbreak
