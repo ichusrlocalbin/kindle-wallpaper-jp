@@ -4,8 +4,8 @@
 
 * 古いkindle(paper white, 第5世代)を天気予報とGoogleカレンダーのイベントを表示する壁紙に  
   ![kindle wallpaper](https://ichusrlocalbin.github.io/images/posts/kindle-wallpaper/kindle-wallpaper.jpg)
-* 充電は1ヵ月に1度くらい(にならないかなー、と願望。これから測定します)
-
+* 充電は1ヵ月に1度くらい(にならないかなー、と願望。これから測定します)  
+  [がんばった記録](https://github.com/ichusrlocalbin/kindle-wallpaper-jp/tree/master/docs#バッテリーとの戦い)
 
 ## 動機
 
@@ -123,7 +123,7 @@ scp kindle/keep_ready_to_suspend.conf root@192.168.15.244:/etc/init/
 ssh root@192.168.15.244
 chmod 755 /mnt/us/wallpaper/*.sh
 mntroot rw
-echo '5 6 * * * /mnt/us/wallpaper/display_wallpaper.sh' >> /etc/crontab/root
+echo '5 6 * * * /mnt/us/wallpaper/display_wallpaper.sh  >> /var/log/display_wallpaper.log' >> /etc/crontab/root
 ```
 
 ## 参考: kindle paper white(第5世代)のjailbreak
