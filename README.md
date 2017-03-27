@@ -136,16 +136,16 @@ echo '5 6 * * * /mnt/us/wallpaper/display_wallpaper.sh  >> /var/log/display_wall
 6. USB Networkのインストール  
    sshのパスワードが設定されてないようだったので、公開鍵を入れる。
    ```
-cp ~/.ssh/id_rsa.pub /Volumes/Kindle/usbnet/etc/authorized_keys
-```
+   cp ~/.ssh/id_rsa.pub /Volumes/Kindle/usbnet/etc/authorized_keys
+   ```
 7. ssh 
    ```
-ssh root@192.168.15.244
-```
+   ssh root@192.168.15.244
+   ```
 8. 書き込みが必要なとき
    ```
-mntroot rw
-```
+   mntroot rw
+   ```
 
 ### kindle jailbreak関連 参考サイト
 
