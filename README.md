@@ -123,7 +123,7 @@ scp kindle/keep_ready_to_suspend.conf root@192.168.15.244:/etc/init/
 ssh root@192.168.15.244
 chmod 755 /mnt/us/wallpaper/*.sh
 mntroot rw
-echo '5 6 * * * /mnt/us/wallpaper/display_wallpaper.sh  >> /var/log/display_wallpaper.log' >> /etc/crontab/root
+echo '5,6 6 * * * /mnt/us/wallpaper/display_wallpaper.sh  >> /var/log/display_wallpaper.log' >> /etc/crontab/root
 ```
 
 ## 参考: kindle paper white(第5世代)のjailbreak
