@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
-import urllib2, urllib, json
+import urllib.request, json
 import codecs
 import sys
 import datetime
@@ -10,10 +10,10 @@ import re
 import secrets
 
 url = "https://api.openweathermap.org/data/2.5/forecast/daily?q=Tokyo,jp&appid={}&lang=ja&units=metric&cnt=2".format(secrets.APPID)
-result = urllib2.urlopen(url).read()
+result = urllib.request.urlopen(url).read()
 # print result
 data = json.loads(result)
-print(data)
+# print(data)
 # print data['forecasts'][1]
 
 tomorrow = data['list'][1]
@@ -38,8 +38,8 @@ icon = f.readline()
 f.close()
 
 # Insert icons and temperatures
-reload(sys)
-sys.setdefaultencoding("utf-8")
+# reload(sys)
+# sys.setdefaultencoding("utf-8")
 locale.setlocale(locale.LC_ALL, ("ja_JP", "utf-8"))
 jp_date = date.strftime("%_m/%_d(%a)")
 output = output.replace('TODAY', jp_date)

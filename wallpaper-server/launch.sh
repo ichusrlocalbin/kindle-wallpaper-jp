@@ -4,8 +4,8 @@ cd "$(dirname "$0")"
 
 # don't need docker env
 # . env/bin/activate
-python programs/create_weather_image.py
-python programs/create_events_image.py
+python3 programs/create_weather_image.py
+python3 programs/create_events_image.py
 
 rsvg-convert -w 758 -h 1024 --background-color=white -o almost_done.png almost_done.svg
 

@@ -58,7 +58,7 @@ $ docker build -t kindle-wallpaper .
 ### 起動
 
 ```
-docker run -p 8080:80 --name kw -d kindle-wallpaper
+docker run -p 8080:80 --name kindle-wallpaper -d kindle-wallpaper
 ```
 
 ### 動作確認
@@ -66,8 +66,8 @@ docker run -p 8080:80 --name kw -d kindle-wallpaper
 インストール当日、実行して、次の日の状態の画像が取得できることを確認
 
 ```
-docker exec -it kw bash
-./display_wallpaper.sh
+docker exec -it kindle-wallpaper bash
+./launch.sh
 exit
 curl http://localhost:8080/done.png > done.png
 ```
