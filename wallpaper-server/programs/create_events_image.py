@@ -13,6 +13,7 @@ from apiclient import discovery
 import oauth2client
 from oauth2client import client
 from oauth2client import tools
+from oauth2client import file
 
 from oauth2client.service_account import ServiceAccountCredentials
 
@@ -77,8 +78,8 @@ def next_events():
     return format_events(events)
 
 def format_events(events):
-    reload(sys)
-    sys.setdefaultencoding("utf-8") 
+#    reload(sys)
+#    sys.setdefaultencoding("utf-8") 
     locale.setlocale(locale.LC_ALL, ("ja_JP", "utf-8"))
     format_events = []
     for event in events:
@@ -98,7 +99,7 @@ def replace_events(format_events):
     for start_date, start_time, event_name in format_events:
         output = output.replace('Day' + str(count), start_date)
         output = output.replace('Hour' + str(count), start_time)
-	output = output.replace('Name' + str(count), event_name)
+        output = output.replace('Name' + str(count), event_name)
         count += 1
     for i in range(count, 5):
         output = output.replace('Day' + str(i), '')
