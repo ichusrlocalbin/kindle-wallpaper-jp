@@ -6,6 +6,7 @@ cd "$(dirname "$0")"
 # . env/bin/activate
 python3 programs/create_weather_image.py
 python3 programs/create_events_image.py
+sed -i -e 's/&/&amp;/g' almost_done.svg
 
 rsvg-convert -w 758 -h 1024 --background-color=white -o almost_done.png almost_done.svg
 
@@ -19,5 +20,5 @@ mv done.png $done_file
 
 rm after-weather.svg
 rm almost_done.png
-rm almost_done.svg
+rm almost_done.svg*
 
