@@ -17,6 +17,8 @@ from oauth2client import file
 
 from oauth2client.service_account import ServiceAccountCredentials
 
+import secrets
+
 try:
     import argparse
     flags = argparse.ArgumentParser(parents=[tools.argparser]).parse_args()
@@ -24,7 +26,7 @@ except ImportError:
     flags = None
 
 # set id such as 'primary'
-CALENDAR_ID = 'primary'
+CALENDAR_ID = secrets.CALENDAR_ID
 
 # If modifying these scopes, delete your previously saved credentials
 # at ~/.credentials/calendar-python-quickstart.json
