@@ -32,6 +32,10 @@
 
 ## raspberry-piの設定
 
+### raspberry-piの環境構築
+
+[raspberry pi の環境構築](docs/raspberry-pi-settings.md) を参照
+
 ### 準備: APIの有効化
 
 * 基本的には、[Google Calendar API Python Quickstart](https://developers.google.com/google-apps/calendar/quickstart/python) の手順に従う
@@ -40,15 +44,25 @@
 * `アクセスするデータの種類` では、 `ユーザデータ` を選択
 * ダウンロードした `client_id.json` は `wallpaper-server`へ移動。
 * 開発環境で `create_events_image.py` を実行し、作成された `~/.credentials` ディレクトリをDockerを構築する端末のDockerfileがあるディレクトリにコピーしておく(webブラウザで認証が必要なので)
+  * 開発環境から `$ scp -r ~/.credentials pi:/home/pi/kindle-wallpaper-jp/`
+
 
 ### 環境構築
 
 個人の環境に合わせ、設定を修正
 
-* `kindle/display_wallpaper.sh` の `WALLPAPER_SERVER`
-* `wallpaper-server/programs/create_events_image.py` の `CALENDAR_ID`  
-   `primary` 以外を設定する場合は、同スクリプト中の `show my carender_id list` の二つを外して、どの `CALENDAR_ID` を設定すべきか検討をつける
-* `wallpaper-server/programs/create_weather_image.py` の `yql_query = 'select * from weather.forecast where woeid = 26236758 and u="c"'` の `woeid` を自分の表示したい場所に設定する。現状は、東京。woeidは、 [https://www.yahoo.com/news/weather/](https://www.yahoo.com/news/weather/) の `Change location` に郵便番号を入れて表示されるURLの末尾から取得できる。
+* `kindle/display_wallpaper.sh` の `WALLPAPER_SERVER` を適宜修正
+  ```
+  WALLPAPER_SERVER=10.0.1.199:8080
+  ```
+* `wallpaper-server/programs/secrets.py` の次の項目を参考に設定
+  ```
+  APPID=''
+  CALENDAR_ID = 'primary'
+  ```
+  * `wallpaper-server/programs/create_events_image.py` の `CALENDAR_ID`  
+     `primary` 以外を設定する場合は、同スクリプト中の `show my carender_id list` の二つを外して、どの `CALENDAR_ID` を設定すべきか検討をつけて設定する
+  * `wallpaper-server/programs/create_weather_image.py` で利用するopenweathermapのAPIキーを設定
 
 
 ```
@@ -82,7 +96,7 @@ curl http://localhost:8080/done.png > done.png
 
 * 参考: https://docs.docker.com/engine/admin/host_integration/
 
-`/etc/systemd/system/docker-kindle-wallpaper.service` を追加
+`/etc/systemd/system/docker-kindle-wallpaper.service` [docker-kindle-wallpaper.service](raspberry-pi-etc/systemd/system/docker-kindle-wallpaper.service) を追加 
 
 ```
 [Unit]
