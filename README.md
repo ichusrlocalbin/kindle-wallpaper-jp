@@ -22,9 +22,8 @@
 ## 元のkindle-wallpaperと違う所
 
 * 元のkinlde-wallpaper: [pjimenezmateo/kindle-wallpaper](https://github.com/pjimenezmateo/kindle-wallpaper) Thank you so much!
-* 天気予報は、livedoorのAPIを使用。元となるデータは、日本気象協会っぽい。
+* 天気予報は、openweathermapのAPIを使用。
   * 元々あった画像が少なく、無理に天気を当てはめているので、一つの画像に複数の天気が割り当てられている。
-  * 詳しくは[メモ](docs/README.md)を参照
 * メッセージの日本語化: 曜日とか
 * 本日の予定と全日の予定との区別の廃止(予定を表示する幅が狭かったので)
 * 更新時刻が朝の6時だったけど、次の日の天気予報も見たいんじゃないかと思い、日本時間の15時(UTCで6時)に変更(cronの更新時刻のコードはそのまま、天気予報は次の日のものを表示するようにした)
